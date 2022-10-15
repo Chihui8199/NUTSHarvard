@@ -16,9 +16,6 @@ function NavigationBar() {
               <Nav.Link as={Link} to="/inventory">
                 Inventory
               </Nav.Link>
-              <Nav.Link as={Link} to="/settings">
-                Settings
-              </Nav.Link>
             </Nav>
           </Navbar.Collapse>
         </Container>
