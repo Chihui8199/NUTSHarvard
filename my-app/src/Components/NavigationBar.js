@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 function NavigationBar() {
   return (
-    <>
+    
       <Navbar collapseOnSelect expand="sm" bg="dark" variant="dark">
         <Container>
           <Navbar.Brand href="/">NUTS</Navbar.Brand>
@@ -16,14 +16,11 @@ function NavigationBar() {
               <Nav.Link as={Link} to="/inventory">
                 Inventory
               </Nav.Link>
-              <Nav.Link as={Link} to="/settings">
-                Settings
-              </Nav.Link>
             </Nav>
           </Navbar.Collapse>
         </Container>
       </Navbar>
-    </>
+    
   );
 }
 

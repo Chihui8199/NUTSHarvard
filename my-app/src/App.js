@@ -1,16 +1,23 @@
 import * as React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import './style.css';
+import "./App.css";
+import 'bootstrap/dist/css/bootstrap.min.css';
+import NavigationBar from "./Components/NavigationBar";
 import InventoryPage from "./Pages/InventoryPage";
-import Timer from "./Components/Timer";
+import MainPage from "./Pages/MainPage";
+import background from "./Images/background.jpg";
+
+
 
 const App = () => {
   return (
-    <div className="App">
+      
+    <div className="App" style={{backgroundImage:`url(${background})`, height:"150vh",width:"auto" }}>
       <BrowserRouter>
+        <NavigationBar/>
         <div>
           <Routes>
-            <Route path="/" element={<Timer />} />
+            <Route path="/" element={<MainPage/>} />
             <Route path="/inventory" element={<InventoryPage/>} />
           </Routes>
         </div>
