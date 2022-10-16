@@ -1,0 +1,97 @@
+body{
+    background-image: url(./images/background.jpg);
+    background-repeat: repeat;
+    background-size:cover;
+}
+
+.spriteImage{
+    display: block;
+    margin-top: 40%;
+    margin-left: auto;
+    margin-right: auto;
+    height: auto;
+    width: 20%;
+}
+
+#centerContainer{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 40%;
+}
+
+.spriteLabel{
+    font-weight: bold;
+    font-size: 2rem;
+    margin-right: 4rem;
+}
+
+#timer {
+    width:100%;
+    height: auto;
+    text-align: center;
+}
+
+
+
+.timer {
+    margin-left: auto;
+    margin-right: auto;
+    width: 40%;
+  }
+  h1 {
+    text-align: center;
+    font-family: Arial, sans-serif;
+    font-size: 20px;
+  }
+  .real-time {
+    display: block;
+    margin: 20px 20px;
+    width: 100%;
+  }
+  .input-time {
+    width: 50%;
+    display: inline;
+    margin:10px;
+    padding: 10px;
+    font-size: 20px;
+  }
+  .input-time div{
+    margin:10px;
+    padding: 10px;
+  }
+  .labelTime{
+    margin-right:20px;
+  }
+  input {
+    width: 80px;
+  }
+  button {
+    width: 10rem;
+    height: 40px;
+    background-color: green;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 2px 2px 0.15rem #000;
+    cursor: pointer;
+    color: #fff;
+    font-weight: 500;
+  }
+  .button-section {
+    width: 40%;
+    display: inline;
+    justify-content: space-between;
+  }
+  .pause-button {
+    margin: 10px 10px;
+    width: 15%;
+    background-color: blue;
+    transition: display 0.5s;
+  }
+  .pause-button.hidden {
+    display: none;
+  }
+  .reset-button {
+    width: 15%;
+    background-color: red;
+}

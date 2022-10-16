@@ -23,7 +23,7 @@ function Progress({
       stopTimer();
       return;
     }
-  }, [minutes, seconds]);
+  }, [minutes, seconds, stopTimer]);
 
   return (
     <div className="pg-container">

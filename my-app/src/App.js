@@ -4,8 +4,10 @@ import "./App.css";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import NavigationBar from "./Components/NavigationBar";
 import InventoryPage from "./Pages/InventoryPage";
+import Timer from "./Components/Timer.js"
 import MainPage from "./Pages/MainPage";
 import background from "./Images/background.jpg";
+import "./style.css"
 
 
 
@@ -17,8 +19,9 @@ const App = () => {
         <NavigationBar/>
         <div>
           <Routes>
-            <Route path="/" element={<MainPage/>} />
+            <Route path="/" element={<Timer/>} />
             <Route path="/inventory" element={<InventoryPage/>} />
+            
           </Routes>
         </div>
       </BrowserRouter>
