@@ -41,7 +41,7 @@
     </div>
     <div id="spriteContainer">
         <?php if($default_value == 1){ ?>
-            <img class="spriteImage" src="./images/<?php echo $sprite[$default_sprite];?>">
+            <img class="spriteImage"  src="./images/<?php echo $sprite[$default_sprite];?>">
         <?php } else {?>
             <img class="spriteImage" src="./images/<?php echo $sprite[$currentSprite];?>">
             <?php }; ?>

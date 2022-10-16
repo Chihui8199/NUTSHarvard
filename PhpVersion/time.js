@@ -2,6 +2,16 @@ function decrementTime(time) {
     time = time - 1;
     return time;
 }
+window.onload = (event) => {
+    document.addEventListener("visibilitychange", (event) => {
+        if (document.visibilityState == "visible") {
+          console.log("tab is active")
+        } else {
+          alert("You have exited the tab, come back before your pet dies!");
+        }
+      });
+  };
+
 
 function changeUI(state) {
     console.log("change ui: Start clicked");
@@ -65,7 +75,6 @@ function calculateHHMMSS(timeInterval) {
 }
 
 function startState(state, interval) {
-    console.log("start");
     hh = document.querySelector(".HH").value;
     mm = document.querySelector(".MM").value;
     ss = document.querySelector(".SS").value;
@@ -82,12 +91,9 @@ function startState(state, interval) {
     let timeInterval =
         parseInt(hh, 10) * 60 * 60 + parseInt(mm, 10) * 60 + parseInt(ss, 10);
     let time = timeInterval;
-    console.log("Time: " + timeInterval);
     interval = setInterval(() => {
-        console.log("timer began");
 
         let arrTime = calculateHHMMSS(time);
-        console.log(arrTime);
         time = decrementTime(time);
         hh = arrTime[0];
         mm = arrTime[1];
@@ -117,6 +123,7 @@ function startState(state, interval) {
     });
 }
 
+
 let state = "start";
 let hh = 0;
 let mm = 0;
@@ -142,6 +149,7 @@ setTimeout(() => {
             alert("Enter HH:MM:SS");
         } else if (event.target.className === "reset-button") {
             // clearInterval(interval);
+            
             changeUI("reset");
         } else if (event.target.className === "pause-button") {
             // clearInterval(interval);
