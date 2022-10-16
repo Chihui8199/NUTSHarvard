@@ -16,6 +16,7 @@ const App = () => {
           <Routes>
             <Route path="/" element={<MainPage/>} />
             <Route path="/inventory" element={<InventoryPage />} />
+            <Route path="/inventory" element={<InventoryPage/>} />
           </Routes>
         </div>
       </BrowserRouter>
