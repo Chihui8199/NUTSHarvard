@@ -1,7 +1,6 @@
 import * as React from "react";
 import Button from '@material-ui/core/Button';
-import {Navigate} from 'react-router-dom';
- 
+import {useNavigate} from 'react-router-dom';
 
 import chimchar from '../Images/chimchar.png';
 import piplup from '../Images/piplup.png';
@@ -11,34 +10,77 @@ const style = {
   margin: 15
 };
 
-const InventoryPage = () => {
+class InventoryPage extends React.Component{
+  constructor() {
+    super();
+    this.state = {
+      name: "React"
+    };
+  this.onValueChange = this.onValueChange.bind(this);
+  this.formSubmit = this.formSubmit.bind(this);
 
+  }
 
+  onValueChange(event) {
+    this.setState({
+      selectedOption: event.target.value
+    });
+  }
 
-  return (
-    <div className="container pets">
-        <div className="pet-container">
-          <form>
-            <div className="venuesHeader">
-              <h1>Choose your pet!</h1>
-            </div>
+  formSubmit = (event) => {
+    const navigate = useNavigate();
+    event.preventDefault();
+    console.log(this.state.selectedOption);
+    navigate('/');
+  }
 
-            <img src={piplup} name="Piplup" alt="Piplup" className="adopt-pet"  />
-            <img src={chimchar} name="Chimchar" alt="Chimchar"className="adopt-pet"  />
-            <img src={turtwig} name="Turtwig" alt="Turtwig"className="adopt-pet"/>
-            <br /><br />
-
-            <Button variant="Raised"
-              label="Select"
-              type="submit"
-              primary={true}
-              style={style}
+  render(){
+    
+    return (
+      <form onSubmit={this.formSubmit}>
+        <div className="radio">
+          <label>
+            <input
+              type="radio"
+              value="Chimchar"
+              checked={this.state.selectedOption === "Chimchar"}
+              onChange={this.onValueChange}
             />
-          </form>
+            Chimchar
+          </label>
+          <img src={chimchar} name="Chimchar" alt="Chimchar" />
         </div>
+        <div className="radio"> 
+          <label>
+            <input
+              type="radio"
+              value="Piplup"
+              checked={this.state.selectedOption === "Piplup"}
+              onChange={this.onValueChange}
+            />
+            Piplup
+          </label>
+          <img src={piplup} name="Piplup" alt="Piplup" />
+        </div>
+        <div className="radio">
+        <label>
+            <input
+              type="radio"
+              value="Turtwig"
+              checked={this.state.selectedOption === "Turtwig"}
+              onChange={this.onValueChange}
+            />
+            Turtwig
+          </label>
+          <img src={turtwig} name="Turtwig" alt="Turtwig" />
+        </div>
+        <button variant = "Raised" type="submit">
+          Submit
+        </button>
+      </form>
+    );
 
-      </div>
-  );
-};
+  }
+}
 
 export default InventoryPage;
