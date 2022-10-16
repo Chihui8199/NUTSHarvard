@@ -12,7 +12,7 @@ import background from "./Images/background.jpg";
 const App = () => {
   return (
       
-    <div className="App" style={{backgroundImage:`url(${background})`, height:"100vh",width:"auto" }}>
+    <div className="App" style={{backgroundImage:`url(${background})`, height:"150vh",width:"auto" }}>
       <BrowserRouter>
         <NavigationBar/>
         <div>
