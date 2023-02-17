@@ -8,6 +8,28 @@ window.onload = (event) => {
           console.log("tab is active")
         } else {
           alert("You have exited the tab, come back before your pet dies!");
+          // Ajax call to update the pet's health each time the tab is inactive lose 25 health
+          function sendRequestToPhp() {
+
+            let xhttp = new XMLHttpRequest();
+          
+            xhttp.open("POST", "spriteController.php", true);
+            xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+          
+            xhttp.onreadystatechange = function() {
+              if (this.status == 200) {
+                // handle the response from the PHP script
+                // let response = JSON.parse(this.responseText);
+                // console.log(response.sprite_health);
+                console.log(this.responseText);
+              }
+            };    
+            let data = "sprite_id=0&sprite_health=25"; 
+            xhttp.send(data);
+            console.log("sent request to php")
+          }
+          sendRequestToPhp();
+
         }
       });
   };

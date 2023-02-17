@@ -4,15 +4,7 @@ body{
     background-size:cover;
 }
 
-.spriteImage{
-    display: block;
-    margin-top: 40%;
-    margin-left: auto;
-    margin-right: auto;
-    height: auto;
-    width: 20%;
-    position: relative;
-}
+
 
 #centerContainer{
     display: block;
@@ -47,7 +39,7 @@ body{
   }
   .real-time {
     display: block;
-    margin: 20px 20px;
+
     width: 100%;
   }
   .input-time {
@@ -58,8 +50,8 @@ body{
     font-size: 20px;
   }
   .input-time div{
-    margin:10px;
-    padding: 10px;
+    margin-top:10px;
+    padding-top: 10px;
   }
   .labelTime{
     margin-right:20px;
@@ -78,21 +70,64 @@ body{
     color: #fff;
     font-weight: 500;
   }
-  .button-section {
-    width: 40%;
-    display: inline;
-    justify-content: space-between;
+  @media (min-width: 480px){
+    .button-section {
+      width: 40%;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      justify-content: space-between;
+    }
+    .pause-button {
+      margin: 10px 10px;
+      width: 30%;
+      background-color: blue;
+      transition: display 0.5s;
+    }
+    .pause-button.hidden {
+      display: none;
+    }
+    .reset-button {
+      width: 30%;
+      background-color: red;
   }
-  .pause-button {
-    margin: 10px 10px;
-    width: 30%;
-    background-color: blue;
-    transition: display 0.5s;
-  }
-  .pause-button.hidden {
-    display: none;
-  }
-  .reset-button {
-    width: 30%;
-    background-color: red;
+  .spriteImage{
+    display: block;
+    margin-top: 10%;
+    margin-left: auto;
+    margin-right: auto;
+    height: auto;
+    width: 20%;
+    position: relative;
 }
+
+  }
+  
+  @media (max-width: 480px) {
+    .button-section {
+      width: 40%;
+      display: block;
+      justify-content: space-between;
+    }
+    .pause-button {
+      margin-bottom: 10px;
+      background-color: blue;
+      transition: display 0.5s;
+    }
+    .pause-button.hidden {
+      display: none;
+    }
+    .reset-button {
+      background-color: red;
+  }
+  .spriteImage{
+    display: block;
+    margin-top: 10%;
+    margin-left: auto;
+    margin-right: auto;
+    height: auto;
+    width: 40%;
+    position: relative;
+}
+}
+  
